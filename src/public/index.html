@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>formulario de carga de los productos</title>
+  </head>
+  <body>
+    <section>
+      <div class="container mt-6" style="max-width: 500px">
+        <form
+          action="/profile"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <h3 class="is-size-3 mb-5">Ingrese un nuevo producto</h3>
+          <div class="field">
+            <label class="label">Nombre</label>
+            <div class="control has-icons-left has-icons-right">
+              <input
+                class="input is-success"
+                type="text"
+                placeholder="Ingrese el nombre del producto"
+                value=""
+                name="name"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Precio</label>
+            <div class="control has-icons-left has-icons-right">
+              <input
+                class="input is-success"
+                type="text"
+                placeholder="Ingrese el precio del producto"
+                value=""
+                name="price"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="file is-boxed">
+              <label class="file-label">
+                <input id="imagenInput" class="file-input" type="file" name="foto" />
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <ion-icon
+                      name="cloud-upload-outline"
+                      style="font-size: 25px"
+                    ></ion-icon>
+                  </span>
+                  <span class="file-label"> Sube una imágen </span>
+                  <p id="aviso"></p>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-success">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="./aviso.js"></script>
+  </body>
+</html>

@@ -1,11 +1,29 @@
-const express = require('events'); 
+//import Path from 'path';
+//import { Server } from 'socket.io';
+
+const express = require('express');
+const routerProduct = require('./router/products.router');
 const app = express();
-const port = 3000;
+const port = 3000; 
+const nombreDeLaEmpresa = 'MG lo quiero 3D';
 
-app.get('/contacto', (req, res) => {
-    res.send('hola a todos en el ${port}');
-})
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.static(__dirname + '/public'));
+app.use('/profile', routerProduct);
 
-app.listen(port, () => {
-    console.log('conectados en el ${port}'); 
-})
+function prendiendoApp() {
+    console.log('prendiendoApp');
+}
+prendiendoApp();
+
+try {
+    app.listen(port); 
+    console.log('arrancamos en el ${port}');
+}
+
+catch(error) {
+    console.log('`Error al arrancar la aplicacion ${error}');
+};
+
+//export { serverSocket };
