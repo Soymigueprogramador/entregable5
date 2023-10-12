@@ -1,5 +1,5 @@
 import { Router, Router } from 'express';
-import __dirname from '../../../util'; nuevo
+import __dirname from '../../../util'; 
 import { serverSocket } from '../../../app';
 import { mensageModal } from '../moduls/mensages.modulo';
 //import router from '../../../router/products.router';
