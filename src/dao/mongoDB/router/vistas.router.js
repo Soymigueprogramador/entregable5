@@ -1,38 +1,38 @@
-import { Router } from 'express';
-import __dirname from '../../../util'; 
+import { Router } from 'express'
+import path from 'path'; 
 
-const router = Router();
+const router = Router(); 
 
 router.get('/', (req, res) => {
-    res.setHeader('content-type', 'text/html');
-    res.status(200).render('home');
+    res.setHeader('Content-Type', 'text/html'); 
+    res.status(200).render(path.join(__dirname, 'home')); 
 });
 
 router.get('/realTimeProductos', (req, res) => {
-    res.setHeader('content-type', 'text/html');
-    res.status(200).render('realTimeProductos');
+    res.setHeader('Content-Type', 'text/html');
+    res.status(200).render(path.join(__dirname, 'realTimeProductos'));
 });
 
 router.get('/chat', (req, res) => {
-    res.setHeader('content-type', 'text/html');
-    res.status(200).render('chat');
+    res.setHeader('Content-Type', 'text/html');
+    res.status(200).render(path.join(__dirname, 'chat'));
 });
 
 router.get('/product', (req, res) => {
-    res.setHeader('content-type', 'text/html');
-    res.status(200).render('product');
+    res.setHeader('Content-Type', 'text/html');
+    res.status(200).render(path.join(__dirname, 'product'));
 });
 
 router.get('/product/:id', (req, res) => {
     const productId = req.params.id;
-    res.setHeader('content-type', 'text/html');
-    res.status(200).render('productDetail', { productId });
+    res.setHeader('Content-Type', 'text/html');
+    res.status(200).render(path.join(__dirname, 'productDetail'), { productId });
 });
 
-router.get('/carrito/:id', (req, res) => {
+router.get('/carrito/:id', (req) => {
     const carritoId = req.params.id;
-    res.setHeader('content-type', 'text/html');
-    res.status(200).render('carritoDetail', { carritoId });
+    res.setHeader('Content-Type', 'text/html');
+    res.status(200).render(path.join(__dirname, 'carritoDetail'), { carritoId });
 });
 
-export default router; 
+export default router;

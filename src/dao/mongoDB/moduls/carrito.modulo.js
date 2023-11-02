@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import { carritoRouter } from '../router/carrito.router';
 
 const carritoColl = 'carrito';
 
@@ -12,4 +13,4 @@ const carritoSchema = new Schema({
     ],
 });
 
-export const carritoModulo = model(carritoColl, carritoSchema)
+export default modules

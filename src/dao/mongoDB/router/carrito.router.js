@@ -1,5 +1,5 @@
 import { Router } from "express";
-import path from 'path'; 
+//import path from 'path'; 
 import { carritoModel } from '../models/carrito.modulo'; 
 import { productModel } from '../models/productos.modulo'; 
 
